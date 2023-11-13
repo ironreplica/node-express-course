@@ -1,3 +1,12 @@
-const connectionString =
-  "mongodb+srv://ironreplica:<password>@nodeexpressprojects.dzkwflb.mongodb.net/?retryWrites=true&w=majority";
-// 52:37
+ const mongoose = require('mongoose');
+
+const connectDB = (url) => {
+return mongoose.connect(url, {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+  useUnifiedTopology: true,
+})
+}
+
+module.exports = connectDB;
